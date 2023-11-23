@@ -11,7 +11,7 @@ pipeline {
         sh 'echo "Building backend application..."'
         sh 'javac multi-stage-multi-agent/HelloWorld.java'
         sh 'ls -la multi-stage-multi-agent'
-        sh 'java multi-stage-multi-agent/HelloWorld'
+        sh 'java -cp multi-stage-multi-agent HelloWorld'
         sh 'echo "Backend deployed!"'
       }
     }
