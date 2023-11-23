@@ -9,7 +9,7 @@ pipeline {
         sh 'mvn --version'
         // Build and deploy backend application
         sh 'echo "Building backend application..."'
-        sh 'javac HelloWorld.java'
+        sh 'javac multi-stage-multi-agent/HelloWorld.java'
         sh 'java HelloWorld'
         sh 'echo "Backend deployed!"'
       }
@@ -23,7 +23,7 @@ pipeline {
         // Build and deploy frontend application
         sh 'echo "Building frontend application..."'
         // Assuming the index.js file is in the current directory
-        sh 'node index.js'
+        sh 'node multi-stage-multi-agent/index.js'
         sh 'echo "Frontend deployed!"'
       }
     }
