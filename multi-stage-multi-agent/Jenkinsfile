@@ -7,6 +7,11 @@ pipeline {
       }
       steps {
         sh 'mvn --version'
+        // Build and deploy backend application
+        sh 'echo "Building backend application..."'
+        sh 'javac HelloWorld.java'
+        sh 'java HelloWorld'
+        sh 'echo "Backend deployed!"'
       }
     }
     stage('Front-end') {
@@ -15,7 +20,13 @@ pipeline {
       }
       steps {
         sh 'node --version'
+        // Build and deploy frontend application
+        sh 'echo "Building frontend application..."'
+        // Assuming the index.js file is in the current directory
+        sh 'node index.js'
+        sh 'echo "Frontend deployed!"'
       }
     }
   }
 }
+
