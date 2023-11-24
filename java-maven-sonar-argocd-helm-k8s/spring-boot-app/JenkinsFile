@@ -50,7 +50,7 @@ pipeline {
             GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
             GIT_USER_NAME = "TeamSucex"
         }
-        steps {
+      steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "abhishek.xyz@gmail.com"
